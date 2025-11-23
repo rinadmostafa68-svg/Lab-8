@@ -5,7 +5,7 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class Lesson_updated implements Record {
+public class LessonUpdated implements Record {
 
     private String lessonId;
     private String courseId;
@@ -16,11 +16,11 @@ public class Lesson_updated implements Record {
     private String quizId;
     private LessonAnalytics analytics;
 
-    public Lesson_updated(String lessonId,
-                  String courseId,
-                  String title,
-                  String content,
-                  List<String> resources) {
+    public LessonUpdated(String lessonId,
+                         String courseId,
+                         String title,
+                         String content,
+                         List<String> resources) {
         this.lessonId = lessonId;
         this.courseId = courseId;
         this.title = title;
@@ -30,13 +30,13 @@ public class Lesson_updated implements Record {
         this.quizId = null;
     }
 
-    public Lesson_updated(String lessonId,
-                  String courseId,
-                  String title,
-                  String content,
-                  List<String> resources,
-                  String quizId,
-                  LessonAnalytics analytics) {
+    public LessonUpdated(String lessonId,
+                         String courseId,
+                         String title,
+                         String content,
+                         List<String> resources,
+                         String quizId,
+                         LessonAnalytics analytics) {
         this.lessonId = lessonId;
         this.courseId = courseId;
         this.title = title;
@@ -75,7 +75,7 @@ public class Lesson_updated implements Record {
         return obj;
     }
 
-    public static Lesson_updated fromJson(JSONObject obj) {
+    public static LessonUpdated fromJson(JSONObject obj) {
         String lessonId = obj.getString("lessonId");
         String courseId = obj.getString("courseId");
         String title = obj.getString("title");
@@ -94,6 +94,6 @@ public class Lesson_updated implements Record {
 
         LessonAnalytics analytics = LessonAnalytics.fromJson(obj.optJSONObject("analytics"));
 
-        return new Lesson_updated(lessonId, courseId, title, content, resources, quizId, analytics);
+        return new LessonUpdated(lessonId, courseId, title, content, resources, quizId, analytics);
     }
 }
